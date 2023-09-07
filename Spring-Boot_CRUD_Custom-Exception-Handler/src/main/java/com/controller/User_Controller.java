@@ -138,7 +138,7 @@ public class User_Controller {
 			boolean res = userRepo.existsById(userReq.getuEmail());
 
 			if(res) {
-				throw new ConflictException("Customer details didn't store...You have already Registered...");
+				throw new ConflictException("User details didn't store...You have already Registered...");
 			}
 			userRepo.save(userReq);
 			return ResponseEntity.status(HttpStatus.CREATED).body("User("+ userReq.getuName() +") Stored successfully...");
